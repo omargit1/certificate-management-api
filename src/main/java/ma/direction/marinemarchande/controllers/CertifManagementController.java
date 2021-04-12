@@ -1,6 +1,5 @@
 package ma.direction.marinemarchande.controllers;
 
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import ma.direction.marinemarchande.dto.CertificatDto;
-import ma.direction.marinemarchande.entities.TCertificat;
 import ma.direction.marinemarchande.service.CertificationService;
 
 
@@ -34,11 +32,7 @@ public class CertifManagementController {
 	@PostMapping("/add")
 	public ResponseEntity<CertificatDto> add(@RequestBody CertificatDto c) {
 		
-		TCertificat tc = new TCertificat();
-		tc.setLibelle(c.getLibelle());
-		tc.setDateDebutValidite(new Date());
-		
-		certificationService.save(tc);
+		certificationService.save(c);
 		
 		return new ResponseEntity<> (c , HttpStatus.CREATED);
 	}

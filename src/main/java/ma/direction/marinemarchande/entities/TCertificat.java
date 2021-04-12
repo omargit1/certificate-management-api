@@ -14,8 +14,6 @@ import javax.persistence.TemporalType;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Parameter;
 
-import ma.direction.marinemarchande.StringPrefixedSequenceIdGenerator;
-
 @Entity
 @Table (name = "T_CERTIFICAT")
 public class TCertificat {
